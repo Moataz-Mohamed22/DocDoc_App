@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       builder: (context, state) {
                         return Column(
                           children: [
-                            CustomTextForFiled(
+                            CustomTextFormFiled(
                               hintText: "Email",
                               autofillHints: [AutofillHints.email],
                               keyboardType: TextInputType.emailAddress,
@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                             ),
                             SizedBox(height: 16.h),
-                            CustomTextForFiled(
+                            CustomTextFormFiled(
                               hintText: "Password",
                               autofillHints: [AutofillHints.password],
                               keyboardType: TextInputType.visiblePassword,

@@ -17,13 +17,10 @@ class AppValidators {
   }
 
   static String? validatePassword(String? val) {
-    RegExp passwordRegex = RegExp(
-      r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$',
-    );
-    if (val == null || val.isEmpty) {
+    if (val == null || val.trim().isEmpty) {
       return "This field is required";
-    } else if (val.length < 8 || !passwordRegex.hasMatch(val)) {
-      return "Please enter a strong password";
+    } else if (val.trim().length < 8) {
+      return "Password must be at least 8 characters";
     } else {
       return null;
     }
