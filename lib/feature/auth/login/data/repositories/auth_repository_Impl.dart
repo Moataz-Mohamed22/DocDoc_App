@@ -6,7 +6,7 @@ import '../../domain/repositories/data_source/auth_remote_data_source.dart';
 import '../../domain/repositories/repo/auth_repository.dart';
 @Injectable(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository  {
-  final AuthRemoteDataSource remote;          // ✅
+  final AuthRemoteDataSource remote;
 
   AuthRepositoryImpl({required this.remote});
 
