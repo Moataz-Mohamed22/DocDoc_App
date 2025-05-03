@@ -33,6 +33,9 @@ class DoctorListView extends StatelessWidget {
               Text("DR- Name" ,style: AppStyles.bold16Black,),
               SizedBox(height: 8.h,),
               Text("DR- Name" ,style: AppStyles.regular13gray,),
+              SizedBox(height: 8.h,),
+
+              Text("DR- Name" ,style: AppStyles.regular13gray,),
             ],
           )
         ],
