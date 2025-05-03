@@ -9,6 +9,14 @@ class AppStyles {
     fontSize: 24.sp ,color:AppColors.blackColor
       ,fontWeight: FontWeight.w700
   );
+  static final TextStyle bold18Black = TextStyle(
+    fontSize: 18.sp ,color:AppColors.blackColor
+      ,fontWeight: FontWeight.w700
+  );
+  static final TextStyle bold16Black = TextStyle(
+    fontSize: 16.sp ,color:AppColors.blackColor
+      ,fontWeight: FontWeight.w700
+  );
   static final TextStyle bold24Blue = TextStyle(
     fontSize: 24.sp ,color:AppColors.blueColor
       ,fontWeight: FontWeight.w700
@@ -44,5 +52,13 @@ class AppStyles {
   static final TextStyle semiBold16blue = GoogleFonts.inter(
     fontSize: 16.sp ,color:AppColors.blueColor
       ,fontWeight: FontWeight.w600
+  );
+  static final TextStyle semiBold18black= GoogleFonts.inter(
+    fontSize: 18.sp ,color:AppColors.blackColor
+      ,fontWeight: FontWeight.w600
+  );
+  static final TextStyle medium18white = GoogleFonts.inter(
+    fontSize: 18.sp ,color:AppColors.whiteColor
+      ,fontWeight: FontWeight.w500
   );
 }
