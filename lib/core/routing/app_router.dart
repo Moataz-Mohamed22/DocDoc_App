@@ -1,6 +1,6 @@
 import 'package:dr_app/core/routing/routes.dart';
 import 'package:dr_app/feature/auth/register/ui/register_screen.dart';
-import 'package:dr_app/feature/home/home_screen.dart';
+import 'package:dr_app/feature/home/ui/home_screen.dart';
 import 'package:dr_app/feature/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,7 @@ class AppRouter {
   Route generateRoute(RouteSettings settings){
   switch(settings.name){
     case Routes.onBoardingScreen :
-      return MaterialPageRoute(builder: (_) =>OnboardingScreen()
+      return MaterialPageRoute(builder: (_) =>HomeScreen()
       );
     case Routes.loginScreen:
       return MaterialPageRoute(builder: (_) =>LoginScreen());

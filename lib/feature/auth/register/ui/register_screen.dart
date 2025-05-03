@@ -1,4 +1,6 @@
 import 'package:dr_app/core/di/di.dart';
+import 'package:dr_app/core/helpers/extension.dart';
+import 'package:dr_app/core/routing/routes.dart';
 import 'package:dr_app/core/widget/custom_text_button.dart';
 import 'package:dr_app/core/widget/custom_text_for_filed.dart';
 import 'package:dr_app/feature/auth/login/ui/widget/text_login.dart';
@@ -8,11 +10,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/dialogue_utils.dart';
 import '../../../../core/utils/validators.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
 RegisterCubit cubit = getIt<RegisterCubit>();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +39,7 @@ RegisterCubit cubit = getIt<RegisterCubit>();
       }else if(state is RegisterSuccessStates){
         DialogueUtils.hideLoading(context);
         DialogueUtils.showMessage(context: context, message: "Register Successfully",
-            title: "Success",posActionName: "OK");
+            title: "Success",posActionName: "OK" ,  );
       }
     },
           child: Form(
@@ -43,9 +53,35 @@ RegisterCubit cubit = getIt<RegisterCubit>();
                 CustomTextFormFiled(hintText: "Email" ,
                   validator: AppValidators.validateEmail,controller: cubit.emailController,),
                 SizedBox(height: 16.h,),
-                CustomTextFormFiled(hintText: "Password" , validator: AppValidators.validatePassword,controller: cubit.passwordController,),
+                CustomTextFormFiled(hintText: "Password" , validator: AppValidators.validatePassword,controller: cubit.passwordController,
+                    obscureText: cubit.isObscure , suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        cubit.  isObscure =!cubit. isObscure;
+                      });
+                    },
+                    child: Icon(
+                      cubit. isObscure ? Icons.visibility_off : Icons.visibility,
+                      size: 20.r,
+                      color: AppColors.blueColor,
+                    ),
+                  ),
+
+                ),
                 SizedBox(height: 16.h,),
-                CustomTextFormFiled(hintText: "Re-Password" , validator: AppValidators.validatePassword,controller: cubit.rePasswordController,),
+                CustomTextFormFiled(hintText: "Re-Password" , validator: AppValidators.validatePassword,controller: cubit.rePasswordController,
+                  obscureText: cubit.isObscure , suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        cubit.  isObscure =!cubit. isObscure;
+                      });
+                    },
+                    child: Icon(
+                      cubit. isObscure ? Icons.visibility_off : Icons.visibility,
+                      size: 20.r,
+                      color: AppColors.blueColor,
+                    ),
+                  ),),
                 SizedBox(height: 16.h,),
                 CustomTextFormFiled(hintText: "Your Number", validator: AppValidators.validatePhoneNumber,controller: cubit.phoneController,),
                 SizedBox(height: 32.h,),

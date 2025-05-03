@@ -18,6 +18,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   TextEditingController emailController = TextEditingController(text: "al-Moataz@gamil.com");
   var formKey = GlobalKey<FormState>();
   RegisterUseCase useCase ;
+  bool isObscure = true ;
 void  register()async{
 if(formKey.currentState!.validate() == true){
   emit(RegisterLoadingStates());
