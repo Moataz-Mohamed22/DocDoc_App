@@ -1,2 +1,0 @@
-E:/testcode/dr_app/android/app/.cxx/Debug/4p3d5v6k/x86/CMakeFiles/edit_cache.dir
-E:/testcode/dr_app/android/app/.cxx/Debug/4p3d5v6k/x86/CMakeFiles/rebuild_cache.dir

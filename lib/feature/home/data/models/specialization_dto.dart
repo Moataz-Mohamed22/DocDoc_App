@@ -9,27 +9,37 @@ class SpecializationDto  extends SpecializationEntity{
 
   SpecializationDto.fromJson(dynamic json) {
     message = json['message'];
-    if (json['data'] != null) {
-      data = [];
-      json['data'].forEach((v) {
-        data?.add(DataSpecializationDto.fromJson(v));
-      });
-    }
     status = json['status'];
     code = json['code'];
+
+    if (json['data'] != null) {
+      data = [];
+
+      // دعم الحالتين: Map أو List
+      if (json['data'] is List) {
+        json['data'].forEach((v) {
+          data?.add(DataModelSpecializationDto.fromJson(v));
+        });
+      } else if (json['data'] is Map<String, dynamic>) {
+        json['data'].values.forEach((v) {
+          data?.add(DataModelSpecializationDto.fromJson(v));
+        });
+      }
+    }
   }
+
 
 
 
 }
 
-class DataSpecializationDto extends DataSpecializationEntity {
-  DataSpecializationDto({
+class DataModelSpecializationDto extends DataModelSpecializationEntity {
+  DataModelSpecializationDto({
       super.id,
     super.name,
     super.doctors,});
 
-  DataSpecializationDto.fromJson(dynamic json) {
+  DataModelSpecializationDto.fromJson(dynamic json) {
     id = json['id'];
     name = json['name'];
     if (json['doctors'] != null) {

@@ -6,15 +6,15 @@ class SpecializationEntity {
       this.code,});
 
   String? message;
-  List<DataSpecializationEntity>? data;
+  List<DataModelSpecializationEntity>? data;
   bool? status;
   num? code;
 
 
 }
 
-class DataSpecializationEntity {
-  DataSpecializationEntity({
+class DataModelSpecializationEntity {
+  DataModelSpecializationEntity({
       this.id, 
       this.name, 
       this.doctors,});

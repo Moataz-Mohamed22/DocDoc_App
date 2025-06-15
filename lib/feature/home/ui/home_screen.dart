@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           SizedBox(height: 28.h,),
           const   DoctorBlueContainer(),
           const DoctorSpecialitySeeAll(),
-          const DoctorSpecialityListView(),
+           DoctorSpecialityListView(),
           SizedBox(height: 8.h,),
           const DoctorListView(),
 
